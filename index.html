@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rupkotha Mart | Modern Ecommerce</title>
+    <meta
+      name="description"
+      content="Shop premium lifestyle products at Rupkotha Mart with style, comfort, and everyday essentials."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <p>Free shipping over $80 • New season collection now live</p>
+        <a href="#">Track Order</a>
+      </div>
+    </header>
+
+    <nav class="navbar">
+      <div class="container nav-inner">
+        <div class="brand-wrap">
+          <div class="brand-mark">A</div>
+          <div>
+            <span class="brand-name">Rupkotha</span>
+            <span class="brand-sub">Mart</span>
+          </div>
+        </div>
+
+        <div class="nav-links">
+          <a href="#home">Home</a>
+          <a href="#shop">Shop</a>
+          <a href="#categories">Categories</a>
+          <a href="#deals">Deals</a>
+          <a href="#reviews">Reviews</a>
+        </div>
+
+        <div class="nav-actions">
+          <button class="icon-button" aria-label="Search">
+            <span>⌕</span>
+          </button>
+          <button class="icon-button" aria-label="Account">
+            <span>◎</span>
+          </button>
+          <button class="cart-button" aria-label="Shopping cart">
+            <span>🛒</span>
+            <span class="cart-count">0</span>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <span class="eyebrow">Fresh arrivals</span>
+            <h1>Smart shopping for a better lifestyle.</h1>
+            <p>
+              Discover premium home essentials, trending fashion, and everyday
+              favorites curated for modern living at Rupkotha Mart.
+            </p>
+            <div class="hero-actions">
+              <a href="#shop" class="primary-btn">Shop now</a>
+              <a href="#categories" class="secondary-btn">Browse categories</a>
+            </div>
+            <ul class="hero-points">
+              <li>Fast delivery</li>
+              <li>Secure checkout</li>
+              <li>Top-rated quality</li>
+            </ul>
+          </div>
+
+          <div class="hero-visual">
+            <div class="floating-card card-one">
+              <span>Best seller</span>
+              <strong>Luxury lounge set</strong>
+              <b>$149</b>
+            </div>
+            <div class="product-showcase">
+              <div class="showcase-glow"></div>
+              <img
+                src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=1200&q=80"
+                alt="Lifestyle shopping banner"
+                class="banner-image"
+              />
+            </div>
+            <div class="floating-card card-two">
+              <span>Customer rating</span>
+              <strong>4.9/5</strong>
+              <small>2,400+ reviews</small>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="brands container" aria-label="Brand logos">
+        <span>Featured in</span>
+        <div class="brand-list">
+          <span>MODA</span>
+          <span>NOIR</span>
+          <span>VANTA</span>
+          <span>HOMECO</span>
+          <span>LAB</span>
+        </div>
+      </section>
+
+      <section class="category-section container" id="categories">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">Categories</span>
+            <h2>Shop by lifestyle</h2>
+          </div>
+          <a href="#shop">View all</a>
+        </div>
+
+        <div class="category-grid">
+          <article class="category-card category-one">
+            <span>Home</span>
+            <h3>Cozy living</h3>
+          </article>
+          <article class="category-card category-two">
+            <span>Fashion</span>
+            <h3>Everyday style</h3>
+          </article>
+          <article class="category-card category-three">
+            <span>Tech</span>
+            <h3>Smart essentials</h3>
+          </article>
+          <article class="category-card category-four">
+            <span>Beauty</span>
+            <h3>Self care</h3>
+          </article>
+        </div>
+      </section>
+
+      <section class="products container" id="shop">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">Featured products</span>
+            <h2>Trending now</h2>
+          </div>
+          <div class="filters" aria-label="product filters">
+            <button class="filter active" data-filter="all">All</button>
+            <button class="filter" data-filter="home">Home</button>
+            <button class="filter" data-filter="fashion">Fashion</button>
+            <button class="filter" data-filter="tech">Tech</button>
+            <button class="filter" data-filter="beauty">Beauty</button>
+          </div>
+        </div>
+
+        <div class="product-grid" id="productGrid"></div>
+      </section>
+
+      <section class="promo-strip" id="deals">
+        <div class="container promo-inner">
+          <div>
+            <span class="eyebrow dark">Limited offer</span>
+            <h2>Save up to 40% on selected bestsellers.</h2>
+          </div>
+          <a href="#shop" class="primary-btn">Explore deals</a>
+        </div>
+      </section>
+
+      <section class="reviews container" id="reviews">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">Customer love</span>
+            <h2>What shoppers are saying</h2>
+          </div>
+        </div>
+
+        <div class="review-grid">
+          <article class="review-card">
+            <div class="stars">★★★★★</div>
+            <p>
+              “The quality is excellent and the packaging felt premium. Delivery was
+              faster than expected.”
+            </p>
+            <div class="reviewer">
+              <strong>Shaila R.</strong>
+              <span>Verified buyer</span>
+            </div>
+          </article>
+
+          <article class="review-card">
+            <div class="stars">★★★★★</div>
+            <p>
+              “I love the design and the value. The lamp looks even better in my
+              apartment.”
+            </p>
+            <div class="reviewer">
+              <strong>Arif M.</strong>
+              <span>Home shopper</span>
+            </div>
+          </article>
+
+          <article class="review-card">
+            <div class="stars">★★★★★</div>
+            <p>
+              “Very smooth checkout and friendly support. This is now my favorite
+              online store.”
+            </p>
+            <div class="reviewer">
+              <strong>Naima K.</strong>
+              <span>Regular customer</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="orders container" aria-label="Recent orders">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">Latest orders</span>
+            <h2>Recent order updates</h2>
+          </div>
+        </div>
+
+        <div class="order-list" id="orderList"></div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div>
+          <div class="brand-wrap footer-brand">
+            <div class="brand-mark">R</div>
+            <div>
+              <span class="brand-name">Rupkotha</span>
+              <span class="brand-sub">Mart</span>
+            </div>
+          </div>
+          <p>Modern essentials for a beautiful everyday life.</p>
+        </div>
+
+        <div class="footer-links">
+          <div>
+            <h4>Shop</h4>
+            <a href="#">New arrivals</a>
+            <a href="#">Best sellers</a>
+            <a href="#">Gift cards</a>
+          </div>
+          <div>
+            <h4>Company</h4>
+            <a href="#">About us</a>
+            <a href="#">Contact</a>
+            <a href="#">Support</a>
+          </div>
+          <div>
+            <h4>Follow</h4>
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+            <a href="#">Pinterest</a>
+          </div>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <p>© 2026 Amika Shop. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <aside class="cart-panel" aria-label="Shopping cart panel">
+      <div class="cart-header">
+        <h3>Your cart</h3>
+        <button class="close-cart" aria-label="Close cart">×</button>
+      </div>
+      <div class="cart-items" id="cartItems">
+        <p class="empty-cart">Your cart is empty.</p>
+      </div>
+      <div class="cart-footer">
+        <div class="cart-summary">
+          <span>Subtotal</span>
+          <strong id="cartTotal">$0.00</strong>
+        </div>
+        <button class="checkout-btn" id="checkoutBtn">Proceed to checkout</button>
+      </div>
+    </aside>
+
+    <div class="modal-backdrop hidden" id="checkoutModal">
+      <div class="checkout-modal">
+        <div class="modal-header">
+          <div>
+            <span class="eyebrow">Checkout</span>
+            <h3>Complete your order</h3>
+          </div>
+          <button class="close-cart" id="closeCheckout" aria-label="Close checkout">×</button>
+        </div>
+
+        <form id="checkoutForm">
+          <div class="form-grid">
+            <label>
+              Full name
+              <input type="text" name="name" placeholder="Your full name" required />
+            </label>
+            <label>
+              Phone number
+              <input type="tel" name="phone" placeholder="01XXXXXXXXX" required />
+            </label>
+            <label class="full-width">
+              Email
+              <input type="email" name="email" placeholder="you@example.com" required />
+            </label>
+            <label class="full-width">
+              Delivery address
+              <textarea name="address" rows="3" placeholder="House, road, area, city" required></textarea>
+            </label>
+          </div>
+
+          <div class="payment-section">
+            <h4>Payment method</h4>
+            <div class="payment-options">
+              <label class="payment-option active">
+                <input type="radio" name="paymentMethod" value="cod" checked />
+                <span>Cash on Delivery</span>
+              </label>
+              <label class="payment-option">
+                <input type="radio" name="paymentMethod" value="card" />
+                <span>Card</span>
+              </label>
+              <label class="payment-option">
+                <input type="radio" name="paymentMethod" value="bkash" />
+                <span>bKash</span>
+              </label>
+              <label class="payment-option">
+                <input type="radio" name="paymentMethod" value="nagad" />
+                <span>Nagad</span>
+              </label>
+            </div>
+
+            <div class="payment-fields" id="paymentFields">
+              <label>
+                Card number
+                <input type="text" name="cardNumber" placeholder="1234 5678 9012 3456" />
+              </label>
+              <div class="inline-fields">
+                <label>
+                  Expiry
+                  <input type="text" name="expiry" placeholder="MM/YY" />
+                </label>
+                <label>
+                  CVV
+                  <input type="text" name="cvv" placeholder="123" />
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="summary-box">
+            <div class="summary-row">
+              <span>Subtotal</span>
+              <strong id="checkoutSubtotal">$0.00</strong>
+            </div>
+            <div class="summary-row">
+              <span>Shipping</span>
+              <strong id="checkoutShipping">$0.00</strong>
+            </div>
+            <div class="summary-row total-row">
+              <span>Total</span>
+              <strong id="checkoutTotal">$0.00</strong>
+            </div>
+          </div>
+
+          <button type="submit" class="primary-btn full-width-btn">Place order</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="toast hidden" id="toast"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
