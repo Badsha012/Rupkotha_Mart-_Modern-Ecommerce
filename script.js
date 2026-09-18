@@ -24,9 +24,16 @@ const paymentFields = document.getElementById('paymentFields');
 
 let currentFilter = 'all';
 let cart = [];
+let visibleCount = 10;
 
 function formatPrice(value) {
   return `$${Number(value).toFixed(2)}`;
+}
+
+function getFilteredProducts() {
+  return currentFilter === 'all'
+    ? products
+    : products.filter((product) => product.category === currentFilter);
 }
 
 function getCartSubtotal() {
@@ -85,12 +92,10 @@ async function loadProducts() {
 }
 
 function renderProducts() {
-  const filteredProducts =
-    currentFilter === 'all'
-      ? products
-      : products.filter((product) => product.category === currentFilter);
+  const filteredProducts = getFilteredProducts();
+  const visibleProducts = filteredProducts.slice(0, visibleCount);
 
-  productGrid.innerHTML = filteredProducts
+  productGrid.innerHTML = visibleProducts
     .map(
       (product) => `
         <article class="product-card" data-category="${product.category}">
@@ -117,6 +122,28 @@ function renderProducts() {
       `
     )
     .join('');
+
+  if (filteredProducts.length > visibleProducts.length) {
+    const moreWrap = document.createElement('div');
+    moreWrap.className = 'load-more-wrap';
+    moreWrap.innerHTML = `
+      <button class="see-more-btn" type="button">
+        See more (${filteredProducts.length - visibleProducts.length} more)
+      </button>
+    `;
+
+    moreWrap.querySelector('.see-more-btn').addEventListener('click', () => {
+      visibleCount = Math.min(visibleCount + 10, filteredProducts.length);
+      renderProducts();
+    });
+
+    productGrid.appendChild(moreWrap);
+  }
+
+  const status = document.createElement('p');
+  status.className = 'product-status';
+  status.textContent = `Showing ${visibleProducts.length} of ${filteredProducts.length} products`;
+  productGrid.appendChild(status);
 
   attachAddButtons();
 }
@@ -187,6 +214,7 @@ filterButtons.forEach((button) => {
   button.addEventListener('click', () => {
     filterButtons.forEach((item) => item.classList.toggle('active', item === button));
     currentFilter = button.dataset.filter;
+    visibleCount = 10;
     renderProducts();
   });
 });
