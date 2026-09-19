@@ -73,10 +73,11 @@ function updateCheckoutSummary() {
 
 async function loadProducts() {
   try {
-    let response = await fetch('api/products.json');
+    const timestamp = Date.now();
+    let response = await fetch(`api/products.json?t=${timestamp}`);
 
     if (!response.ok) {
-      response = await fetch('products.json');
+      response = await fetch(`products.json?t=${timestamp}`);
     }
 
     if (!response.ok) {
