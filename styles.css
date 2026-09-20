@@ -1093,30 +1093,53 @@ textarea {
     display: none;
   }
 
-  .hero-grid,
-  .category-grid,
-  .product-grid,
+  .topbar-inner {
+    justify-content: center;
+    text-align: center;
+    flex-wrap: wrap;
+    padding: 10px 0;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .category-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .review-grid,
+  .order-list,
   .footer-inner {
     grid-template-columns: 1fr 1fr;
   }
 
-  .hero-grid,
   .footer-inner {
     display: grid;
   }
 
-  .category-grid {
+  .review-grid,
+  .order-list {
     display: grid;
   }
 
-  .product-grid,
-  .review-grid {
-    display: grid;
+  .promo-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
   }
 }
 
 @media (max-width: 720px) {
+  .container {
+    width: min(100% - 20px, 1200px);
+  }
+
   .topbar-inner,
   .section-heading,
   .promo-inner,
@@ -1125,6 +1148,40 @@ textarea {
   .footer-inner {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .topbar-inner {
+    align-items: center;
+    text-align: center;
+  }
+
+  .nav-inner {
+    min-height: 74px;
+    gap: 12px;
+  }
+
+  .brand-wrap {
+    min-width: 0;
+  }
+
+  .brand-mark {
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+  }
+
+  .nav-actions {
+    gap: 8px;
+  }
+
+  .icon-button {
+    width: 42px;
+    height: 42px;
+  }
+
+  .cart-button {
+    padding: 9px 12px;
   }
 
   .section-heading,
@@ -1137,8 +1194,16 @@ textarea {
   .category-grid,
   .product-grid,
   .review-grid,
-  .hero-grid {
+  .order-list,
+  .hero-grid,
+  .form-grid,
+  .inline-fields,
+  .payment-options {
     grid-template-columns: 1fr;
+  }
+
+  .brand-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .hero {
@@ -1149,9 +1214,19 @@ textarea {
     font-size: 2.7rem;
   }
 
+  .hero-copy p {
+    font-size: 1rem;
+  }
+
+  .hero-points {
+    gap: 12px;
+  }
+
   .floating-card {
     position: static;
     margin: 12px 0;
+    width: 100%;
+    min-width: 0;
   }
 
   .hero-visual {
@@ -1162,5 +1237,47 @@ textarea {
 
   .product-showcase {
     height: 360px;
+  }
+
+  .filters {
+    justify-content: flex-start;
+  }
+
+  .filter {
+    padding: 9px 12px;
+    font-size: 0.85rem;
+  }
+
+  .product-card {
+    padding: 12px;
+  }
+
+  .product-media {
+    height: 210px;
+  }
+
+  .promo-strip {
+    margin-top: 64px;
+    padding: 26px 0;
+  }
+
+  .promo-inner h2 {
+    font-size: 2.1rem;
+  }
+
+  .footer-links {
+    grid-template-columns: 1fr;
+  }
+
+  .checkout-modal {
+    padding: 18px;
+  }
+
+  .modal-header h3 {
+    font-size: 1.5rem;
+  }
+
+  .cart-panel {
+    width: 100%;
   }
 }
