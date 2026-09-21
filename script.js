@@ -21,6 +21,10 @@ const orderList = document.getElementById('orderList');
 const filterButtons = document.querySelectorAll('.filter');
 const paymentOptions = document.querySelectorAll('.payment-option');
 const paymentFields = document.getElementById('paymentFields');
+const videoModal = document.getElementById('videoModal');
+const modalVideo = document.getElementById('modalVideo');
+const openVideoButton = document.querySelector('.video-open-button');
+const closeVideo = document.getElementById('closeVideo');
 
 let currentFilter = 'all';
 let cart = [];
@@ -241,6 +245,30 @@ checkoutBtn.addEventListener('click', () => {
 
 closeCheckout.addEventListener('click', () => {
   checkoutModal.classList.add('hidden');
+});
+
+function closeVideoModal() {
+  modalVideo.pause();
+  modalVideo.currentTime = 0;
+  videoModal.classList.add('hidden');
+}
+
+openVideoButton.addEventListener('click', () => {
+  videoModal.classList.remove('hidden');
+  modalVideo.currentTime = 0;
+  modalVideo.play().catch(() => {});
+});
+
+closeVideo.addEventListener('click', closeVideoModal);
+
+videoModal.addEventListener('click', (event) => {
+  if (event.target === videoModal) closeVideoModal();
+});
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape' && !videoModal.classList.contains('hidden')) {
+    closeVideoModal();
+  }
 });
 
 paymentOptions.forEach((option) => {
